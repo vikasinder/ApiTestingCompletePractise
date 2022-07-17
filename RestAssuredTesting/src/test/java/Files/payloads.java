@@ -3,6 +3,8 @@ package Files;
 public class payloads {
 	
 	
+	// This Payload is to Post  a place or ADD a place in API
+	
 	public static String AddPlace() 
 	
 	{

@@ -9,7 +9,9 @@ import io.restassured.path.json.JsonPath;
 
 public class Day2 {
 
-	// ( POST REQUEST ) Add a new place ****( PUT REQUEST ) then update the place with the place_id you received in response when you added a new place
+	// ( POST REQUEST ) Add a new place ****
+	// Then From Response You get , extract the value of place_id , so that it can be used when you want to do a PUT request
+	//	( PUT REQUEST ) then update the place with the place_id you received in response when you added a new place
 	//( GET REQUEST )Then Get The Place back again to see whether it has been successfully updated or Not
 	
 	public static void main(String[] args) {
