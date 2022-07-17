@@ -5,6 +5,7 @@ import static org.hamcrest.Matchers.equalTo;
 
 import org.testng.Assert;
 
+import Files.ResuableMethods;
 import Files.payloads;
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
@@ -60,8 +61,12 @@ public class Day3 {
 					.when().get("maps/api/place/get/json")
 					.then().log().all().statusCode(200).extract().response().asString();
 				
-					JsonPath jsonResponse=new JsonPath(getAddressDetails);
-					String newRetrievedActualAddress=	jsonResponse.getString("address");
+//					JsonPath json1=  ResuableMethods.rawToJson(getAddressDetails);
+//					String newRetrievedActualAddress = json1.getString("address");
+//					
+					////////////////OR this can be straight away used as below code //////////////////
+					
+					String newRetrievedActualAddress= ResuableMethods.rawToJson(getAddressDetails).getString("address");
 					System.out.println(newRetrievedActualAddress);
 					Assert.assertEquals(newUpdatedAddress, newRetrievedActualAddress);
 }
