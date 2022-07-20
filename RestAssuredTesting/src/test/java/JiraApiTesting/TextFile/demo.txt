@@ -1,0 +1,10 @@
+As a pragmatic and multifaceted team-player, using my engineering background, I strive to deliver quality in timely and agile manner. My professional experience includes analysing the business requirements, creating automated test suites, plugging them in the pipeline to enable automated timely feedback as software undergoes various changes in agile fashion. 
+
+My technical basics are crystal clear and overtime I have developed numerous, efficient, high performant test-automation solutions from ground-up. Having worked for 8+ years - I have gained exposure to tools / frameworks such as Selenium, Cucumber, Cypress, Karate, JMeter, Maven, TestNG, Jenkins, GIT, ReportPortal AI. Additionally, I am proficient in Java and Javascript programming language, but have a quick learning aptitude for any technology at hand. 
+
+My past background of working with product based company has allowed me to work along varying technology-stacks such as AI/Machine Learning, HTML/AngularJS/React, Legacy Web-application built on IFrames, and Thick Clients on third party libraries. This has allowed me to gain vital understanding of which automation tools/frameworks are best suited for a specific platform.
+
+Furthermore, my leadership style focuses on uniting teams around a central cause by leveraging extensive knowledge in managing, educating, and training team members to increase operational productivity and efficiency.
+
+
+

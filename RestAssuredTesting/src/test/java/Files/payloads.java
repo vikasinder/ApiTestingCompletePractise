@@ -71,4 +71,13 @@ public class payloads {
 		
 	}
 	
+	public static String deleteBook(String value)
+	{
+		String deletePayload="{\r\n"
+				+ "\"ID\" : \""+value+"\"\r\n"
+				+ "} \r\n"
+				+ "";
+		return deletePayload;
+		
+	}
 }
