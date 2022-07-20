@@ -37,7 +37,7 @@ public class AddAttachmentsJira {
 //	/// POSTING COMMENTS TO ALREADY LOGGED IN SESSION USER
 //	/// USER STORY IS ALREADY THERE , YOU ARE JUST ADDING COMMENTS TO THAT
 // YOU CANNOT SEND MULTIPLE HEADERS IN SINGLE HEADER VALUE
-	// YOU HAVE TO USE MULTIPLE TAGS FOR THAT
+	
 	
 	given().log().all().pathParam("id","10101").header("Content-Type","multipart/form-data").header("X-Atlassian-Token","no-check")
 	.multiPart("file",new File("C:\\Users\\vikas\\git\\RestAssuredApiTesting\\RestAssuredTesting\\src\\test\\java\\JiraApiTesting\\TextFile\\demo.txt"))
