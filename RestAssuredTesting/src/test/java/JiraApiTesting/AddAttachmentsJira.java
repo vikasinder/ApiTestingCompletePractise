@@ -30,6 +30,19 @@ public class AddAttachmentsJira {
 	System.out.println(newRetrievedsessionid);
 	//Assert.assertEquals(newUpdatedAddress, newRetrievedActualAddress);
 
+	// **********************SENDING USERNAME AND PASSWORD FORM JSON FILE AS PAYLOAD EXAMPLE **************//
+
+	//			File jsonDataInFile = new File("C:\\Users\\vikas\\git\\RestAssuredApiTesting\\RestAssuredTesting\\src\\test\\java\\JiraApiTesting\\TextFile\\demo1.json");
+//	
+//			String response=given().log().all().header("Content-type","application/json").
+//			body(jsonDataInFile).filter(session).
+//			when().post("rest/auth/1/session").then().log().all().assertThat().statusCode(200).body("session.name", equalTo("JSESSIONID")).extract().response().asString();
+//			
+//			String newRetrievedsessionid= ResuableMethods.rawToJson(response).getString("session.value");
+//			System.out.println(newRetrievedsessionid);
+//	
+	
+	
 	
 	
 	

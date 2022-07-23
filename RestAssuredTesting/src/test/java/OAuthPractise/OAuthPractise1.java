@@ -118,7 +118,7 @@ public class OAuthPractise1 {
 //		driver.findElement(By.cssSelector("input[type]='password'")).sendKeys(Keys.ENTER);
 //		
 //		String url=driver.getCurrentUrl();
-		String url="https://rahulshettyacademy.com/getCourse.php?code=4%2F0AdQt8qgAu-rEgMjKzIPuJSUsBGn2Cc1NKWM0gLT3ctyZCSuM5tVvOVTXoJ5cV0bR8pBYGg&scope=email+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&prompt=none";
+		String url="https://rahulshettyacademy.com/getCourse.php?code=4%2F0AdQt8qh9beKTLMMhvJ5Y7-9vTulEZO8jaQGnSkUhYx5oowEqL90p-g9O6vZQ1KzAP8gsog&scope=email+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&prompt=none";
 		String partialCode=url.split("code=")[1];
 		String code=partialCode.split("&scope")[0];
 		
