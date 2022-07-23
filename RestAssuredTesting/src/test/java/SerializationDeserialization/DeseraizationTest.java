@@ -56,6 +56,7 @@ public class DeseraizationTest {
 	// USING FOR LOOP
 	
 	List<api> apiValues=getCourse.getCourses().getApi();
+	List<webAutomation> webAutomationValues=getCourse.getCourses().getWebAutomation();
 	
 	for(int i=0; i<apiValues.size(); i++)
 	{
@@ -63,7 +64,17 @@ public class DeseraizationTest {
 		{
 			System.out.println(apiValues.get(i).getPrice());
 		}
+		
 	}
+	
+	// loop for printing all values in webautomation list field
+	
+	for(int i=0; i<webAutomationValues.size(); i++)
+	{
+			System.out.println(webAutomationValues.get(i).getCourseTitle());
+	}
+	
+	
 	
 	}
 
