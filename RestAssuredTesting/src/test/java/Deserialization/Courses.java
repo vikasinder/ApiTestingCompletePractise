@@ -1,8 +1,10 @@
-package SerializationDeserialization;
+package Deserialization;
 
 import java.util.List;
 
 public class Courses {
+	
+	// AS ALL THESE ARE RETURNING ARRAY OF VALUES THAT IS WHY WE HAVE USED LIST TO INTIALIZE THEM
 	
 	private List<webAutomation> webAutomation;
 	private  List<api> api;
@@ -16,7 +18,7 @@ public class Courses {
 //		"courseTitle": "Protractor",
 //		"price": "40"
 //		}
-//		],
+//		],                         list of api's
 //		"api": [
 //		{
 //		"courseTitle": "Rest Assured Automation using Java",
@@ -27,7 +29,7 @@ public class Courses {
 //		"price": "40"
 //		}
 //		],
-//		"mobile": [
+//		"mobile": [                   list of mobiles
 //		{
 //		"courseTitle": "Appium-Mobile Automation using Java",
 //		"price": "50"
@@ -44,16 +46,16 @@ public class Courses {
 	public void setWebAutomation(List<webAutomation> webAutomation) {
 		this.webAutomation = webAutomation;
 	}
-	public List<SerializationDeserialization.api> getApi() {
+	public List<Deserialization.api> getApi() {
 		return api;
 	}
-	public void setApi(List<SerializationDeserialization.api> api) {
+	public void setApi(List<Deserialization.api> api) {
 		this.api = api;
 	}
-	public List<SerializationDeserialization.mobile> getMobile() {
+	public List<Deserialization.mobile> getMobile() {
 		return mobile;
 	}
-	public void setMobile(List<SerializationDeserialization.mobile> mobile) {
+	public void setMobile(List<Deserialization.mobile> mobile) {
 		this.mobile = mobile;
 	}
 	

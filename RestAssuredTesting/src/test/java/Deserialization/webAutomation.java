@@ -1,4 +1,4 @@
-package SerializationDeserialization;
+package Deserialization;
 
 public class webAutomation {
 	

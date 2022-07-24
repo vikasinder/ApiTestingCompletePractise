@@ -17,6 +17,12 @@ public class GetIssueCreatedInJira {
 	@Test
 	public void getIssue()
 	{
+
+		// AS THE END POINT IS SAME FOR ALL THE REQUEST , SO YOU CAN GIVE IT LIKE THIS
+		// RestAssured.baseURI="http://localhost:8080/";
+		// OTHERWISE GIVE IT SEPREATELY LIKE GIVEN BELOW 
+		// when().get("https://rahulshettyacademy.com/getCourse.php").then().extract().response().as(GetCourses.class);
+	
 	RestAssured.baseURI="http://localhost:8080/";
 	
 	// CREATING SESSION BEFORE YOU CAN DO ANYTHING WITH JIRA API

@@ -1,4 +1,4 @@
-package SerializationDeserialization;
+package Deserialization;
 
 import static io.restassured.RestAssured.given;
 
@@ -12,6 +12,12 @@ public class DeseraizationTest {
 
 	public static void main(String[] args) throws InterruptedException
 	{
+
+		// AS THE END POINT IS SAME FOR ALL THE REQUEST , SO YOU CAN GIVE IT LIKE THIS
+		// RestAssured.baseURI="http://localhost:8080/";
+		// OTHERWISE GIVE IT SEPREATELY LIKE GIVEN BELOW 
+		// when().get("https://rahulshettyacademy.com/getCourse.php").then().extract().response().as(GetCourses.class);
+	
 		String url="https://rahulshettyacademy.com/getCourse.php?code=4%2F0AdQt8qgWa_8zSTIA-X9VIRjc_kNnomfT6u7iG3hVjAusYazOe90WzgjbdSUQpFXoEHKtiA&scope=email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid&authuser=0&prompt=none";
 		String partialCode=url.split("code=")[1];
 		String code=partialCode.split("&scope")[0];
@@ -40,7 +46,9 @@ public class DeseraizationTest {
 	 
 	 
 	 
-	 // .as(GetCourses.class) and insted of asString use return type should be object of GetCourses class
+	 // .as(GetCourses.class) and instead of asString use return type should be object of GetCourses class
+	 // HERE IT IS WHERE FROM JSON RESPONSE TO JAVA OBJECT CONVERSION TAKES PLACE
+	 
 	GetCourses getCourse=given().queryParam("access_token", accessToken).expect().defaultParser(Parser.JSON).
 	when().get("https://rahulshettyacademy.com/getCourse.php").then().extract().response().as(GetCourses.class);
 	
@@ -54,6 +62,9 @@ public class DeseraizationTest {
 	// YOU HAVE TO USE FOR LOOP OR ITERATOR - TO ITERATE THROUGH THE LIST
 	
 	// USING FOR LOOP
+	
+	// getCourse is object of GetCourses Class created above
+	//getCourses is getter for courses in GetCouses Class
 	
 	List<api> apiValues=getCourse.getCourses().getApi();
 	List<webAutomation> webAutomationValues=getCourse.getCourses().getWebAutomation();

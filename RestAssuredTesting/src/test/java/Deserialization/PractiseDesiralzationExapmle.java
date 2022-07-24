@@ -1,4 +1,4 @@
-package SerializationDeserialization;
+package Deserialization;
 
 import static io.restassured.RestAssured.given;
 
@@ -27,9 +27,14 @@ public class PractiseDesiralzationExapmle {
 		
 		
 		String[] coursesWebautomation= { "Selenium Webdriver Java", "Cypress", "Protractor"  };
+
+		// AS THE END POINT IS SAME FOR ALL THE REQUEST , SO YOU CAN GIVE IT LIKE THIS
+		// RestAssured.baseURI="http://localhost:8080/";
+		// OTHERWISE GIVE IT SEPREATELY LIKE GIVEN BELOW 
+		// when().get("https://rahulshettyacademy.com/getCourse.php").then().extract().response().as(GetCourses.class);
+	
 		
-		
-		String url="https://rahulshettyacademy.com/getCourse.php?code=4%2F0AdQt8qgXXHbqXr32ig6PWCeq-BTqdV0ZzbkgviW_k9AQBnFk17wiEqpecea9pE567CSXdQ&scope=email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid&authuser=0&prompt=none";
+		String url="https://rahulshettyacademy.com/getCourse.php?code=4%2F0AdQt8qhkefdnA0IKRR4ZAWSgWnNd529XQ1pstBOjaftG41DPfA9VS2JlWKtzjuikMatc0w&scope=email+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&prompt=none";
 		String partialCode=url.split("code=")[1];
 		String code=partialCode.split("&scope")[0];
 		
@@ -58,6 +63,8 @@ public class PractiseDesiralzationExapmle {
 	 
 	 
 	 // .as(GetCourses.class) and insted of asString use return type should be object of GetCourses class
+	 // HERE IT IS WHERE FROM JSON RESPONSE TO JAVA OBJECT CONVERSION TAKES PLACE
+		
 	GetCourses getCourse=given().queryParam("access_token", accessToken).expect().defaultParser(Parser.JSON).
 	when().get("https://rahulshettyacademy.com/getCourse.php").then().extract().response().as(GetCourses.class);
 	

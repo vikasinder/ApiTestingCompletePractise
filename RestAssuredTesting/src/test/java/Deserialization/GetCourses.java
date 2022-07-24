@@ -1,4 +1,4 @@
-package SerializationDeserialization;
+package Deserialization;
 
 import com.fasterxml.jackson.databind.deser.std.StringArrayDeserializer;
 
@@ -78,11 +78,5 @@ public class GetCourses {
 
 	
 	
-	public void main(String[] args)
-	{
 	
-		
-	
-	
-	}
 }

@@ -1,7 +1,7 @@
-package SerializationDeserialization;
+package Deserialization;
 
-public class api {
-
+public class mobile {
+	
 	private String courseTitle;
 	public String getCourseTitle() {
 		return courseTitle;
@@ -17,4 +17,5 @@ public class api {
 	}
 	private String price;
 	
+
 }
