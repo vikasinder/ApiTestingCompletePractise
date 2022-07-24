@@ -19,7 +19,7 @@ public class Day3 {
 		
 		public static void main(String[] args) {
 
-///////////// THIS IS A POST REQUEST  ////////////////////
+			///////////// THIS IS A POST REQUEST  ////////////////////
 			//Given : All Input Details
 					//When : Submit The API / Resource
 					//Then : Validate the Response
