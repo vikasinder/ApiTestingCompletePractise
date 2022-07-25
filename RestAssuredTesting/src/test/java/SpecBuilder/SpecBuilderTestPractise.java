@@ -99,21 +99,23 @@ public class SpecBuilderTestPractise {
 				// NO HEADER IS THERE- BEACAUSE YOU ARE SENDING GET REQUEST - SO NO CONTENT BODY IS THERE
 	
 				RestAssured.baseURI="https://rahulshettyacademy.com";
-				
-				String getAddressDetails=	given().log().all().queryParam("key", "qaclick123").queryParam("place_id", ""+place+"")
-						.when().get("maps/api/place/get/json")
-						.then().log().all().statusCode(200).extract().response().asString();
+
+				 RequestSpecification getRequestDetails= given().log().all().spec(req).queryParam("key", "qaclick123").queryParam("place_id", ""+place+"");
+					Response validResponse=	getRequestDetails.when().get("maps/api/place/get/json")
+						.then().log().all().statusCode(200).extract().response();
+					
+					    String stringConvert=validResponse.asString();    
 					
 //						JsonPath json1=  ResuableMethods.rawToJson(getAddressDetails);
 //						String newRetrievedActualAddress = json1.getString("address");
 //						
 						////////////////OR this can be straight away used as below code //////////////////
 						
-						String newRetrievedActualAddress= ResuableMethods.rawToJson(getAddressDetails).getString("address");
+						String newRetrievedActualAddress= ResuableMethods.rawToJson(stringConvert).getString("address");
 						System.out.println(newRetrievedActualAddress);
 						Assert.assertEquals(newUpdatedAddress, newRetrievedActualAddress);
 
-     		
+		
 	}
 		
 }
