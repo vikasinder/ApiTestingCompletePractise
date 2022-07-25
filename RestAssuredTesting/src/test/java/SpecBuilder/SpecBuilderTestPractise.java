@@ -9,10 +9,12 @@ import Files.ResuableMethods;
 import Files.payloads;
 import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
+import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
+import io.restassured.specification.ResponseSpecification;
 
 public class SpecBuilderTestPractise {
 	
@@ -36,11 +38,10 @@ public class SpecBuilderTestPractise {
 		.build(); // This is there for both RequestSpecBuilder & ResponseSpecBilder
 		
 //		
-//		RequestSpecification req= new ResponseSpecBuilder().setBaseUri("https://rahulshettyacademy.com")
-//				.addQueryParam("Key", "qaclick123")
-//				.setContentType(ContentType.JSON)
-//				.build(); // This is there for both RequestSpecBuilder & ResponseSpecBilder
-//				
+		ResponseSpecification responseBuild= new ResponseSpecBuilder().expectStatusCode(200)
+				.expectContentType(ContentType.JSON)
+				.build(); // This is there for both RequestSpecBuilder & ResponseSpecBilder
+				
 		
 		
 		///////////// THIS IS A POST REQUEST  ////////////////////
@@ -58,7 +59,7 @@ public class SpecBuilderTestPractise {
 				.body(payloads.AddPlace());
 		
 				Response response= res.when().post("maps/api/place/add/json")
-				.then().log().all().assertThat().statusCode(200).body("scope", equalTo("APP")).header("server","Apache/2.4.41 (Ubuntu)").extract().response();
+				.then().log().all().assertThat().spec(responseBuild).body("scope", equalTo("APP")).header("server","Apache/2.4.41 (Ubuntu)").extract().response();
 	
 				//This class converts string to Json object so that we can extract particular value from the string that we
 				// Got in response string variable
@@ -82,7 +83,7 @@ public class SpecBuilderTestPractise {
 						+ "    \"key\":\"qaclick123\"\r\n"
 						+ "}");
 						
-				Response valueRecieved=req1.when().put("maps/api/place/update/json").then().log().all().assertThat().statusCode(200).body("msg", equalTo("Address successfully updated")).extract().response();
+				Response valueRecieved=req1.when().put("maps/api/place/update/json").then().log().all().assertThat().spec(responseBuild).body("msg", equalTo("Address successfully updated")).extract().response();
 	
 				
 			    String actualResponse1= valueRecieved.asString();
@@ -102,7 +103,7 @@ public class SpecBuilderTestPractise {
 
 				 RequestSpecification getRequestDetails= given().log().all().spec(req).queryParam("key", "qaclick123").queryParam("place_id", ""+place+"");
 					Response validResponse=	getRequestDetails.when().get("maps/api/place/get/json")
-						.then().log().all().statusCode(200).extract().response();
+						.then().log().all().spec(responseBuild).extract().response();
 					
 					    String stringConvert=validResponse.asString();    
 					
