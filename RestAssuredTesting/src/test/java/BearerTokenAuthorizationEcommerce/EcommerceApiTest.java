@@ -31,6 +31,9 @@ public class EcommerceApiTest {
 		
 				// DATA THAT NEEDS TO SENT AS PAYLOAD IN BODY- THAT VALUES  NEEDS TO BE SERAILIZED
 				
+				
+		//************************** Doing Login To Application and extracting token value  *******************//
+				
 				LoginClass login=new LoginClass();
 				login.setUserEmail("vikasinder72@gmail.com");
 				login.setUserPassword("Inder@1057");
@@ -58,7 +61,7 @@ public class EcommerceApiTest {
 				System.out.println(token);
 				System.out.println(userId);
 				
-				//    ADD PRODUCT TO SITE    //
+				//    ADDING PRODUCT TO APPLICATION    //
 				
 				
 				RequestSpecification intialAddPrdoct=new RequestSpecBuilder()
@@ -90,6 +93,8 @@ public class EcommerceApiTest {
 						System.out.println(value);// This value gives productId Value
 	
 	
+						
+						//****************ORDERING OF THE SAME PRODUCT THAT IS ADDED ABOVE         ***********//
 						RequestSpecification intialcreateproductorder=new RequestSpecBuilder()
 								.setBaseUri("https://rahulshettyacademy.com")
 								.setContentType(ContentType.JSON)
@@ -144,6 +149,40 @@ public class EcommerceApiTest {
 //						String msg=	json3.get("message");
 //						
 						System.out.println(stringresponseValue);
+						
+						
+						
+						/////////////*************DELETION OF THE PRODUCT THAT IS ADDED ABOVE *************//
+						
+						
+						
+						
+						RequestSpecification productorderDelete=new RequestSpecBuilder()
+								.setBaseUri("https://rahulshettyacademy.com")
+								.setContentType(ContentType.JSON)
+								.addHeader("authorization", token)
+								.build();
+						
+												// SO WE HAVE TO CREATE A LIST OF ORDERS TO PASS
+						
+						
+						
+						
+						RequestSpecification orderDeletion=given().log().all().spec(productorderDelete) // spec is used when you use specbuilder
+								.pathParam("productId", value); // value have the ID of product that have been added earlier
+						
+						
+						Response ResponseDeleteValue= orderDeletion.when().delete("/api/ecom/product/delete-product/{productId}").then()
+								.log().all().extract().response();
+						
+						String stringresponseDeleteValue=ResponseDeleteValue.asString();
+						
+						JsonPath json3=new JsonPath(stringresponseDeleteValue);
+						
+						String msg=	json3.get("message");
+//						
+						System.out.println(msg);
+						
 						
 	}
 

@@ -3,7 +3,9 @@ package BearerTokenAuthorizationEcommerce;
 public class DesializationresponseBody {
 	
 	private String token;
-	
+	private String userId;
+	private String message;
+
 	public String getToken() {
 		return token;
 	}
@@ -22,7 +24,5 @@ public class DesializationresponseBody {
 	public void setMessage(String message) {
 		this.message = message;
 	}
-	private String userId;
-	private String message;
-
+	
 }
