@@ -50,7 +50,8 @@ public class DeseraizationTest {
 	 // HERE IT IS WHERE FROM JSON RESPONSE TO JAVA OBJECT CONVERSION TAKES PLACE
 	 
 	GetCourses getCourse=given().queryParam("access_token", accessToken).expect().defaultParser(Parser.JSON).
-	when().get("https://rahulshettyacademy.com/getCourse.php").then().extract().response().as(GetCourses.class);
+	when().get("https://rahulshettyacademy.com/getCourse.php").then().extract().response().as(GetCourses.class); // AS GETCOURSES CLASS IS USED 
+	// BEACUSE THIS IS THE PARENT ROOT OF ALL THE OTHER CLASSES
 	
 	
 	//  AS API RETURNS LIST OF OBJECTS
@@ -64,10 +65,13 @@ public class DeseraizationTest {
 	// USING FOR LOOP
 	
 	// getCourse is object of GetCourses Class created above
-	//getCourses is getter for courses in GetCouses Class
-	
+	// getCourses is getter for courses in GetCourse Class [ api/ mobile/ web automation]
+	// HERE WE ARE GETTING VALUES OF API COURSES , SO NO NEED TO CREATE OBJECT OF COURSES CLASS
+	// OTHERWISE IF YOU HAVE TO PASS VALUES TO COURSES CLASS , YOU HAVE TO MAKE OBJECT OF THAT CLASS AND THEN PASS THE VALUES AS IN CASE OF ECOMMERCE CLASS EXAMPLE
 	List<api> apiValues=getCourse.getCourses().getApi();
 	List<webAutomation> webAutomationValues=getCourse.getCourses().getWebAutomation();
+	List<mobile> mobiles=getCourse.getCourses().getMobile();
+	
 	
 	for(int i=0; i<apiValues.size(); i++)
 	{

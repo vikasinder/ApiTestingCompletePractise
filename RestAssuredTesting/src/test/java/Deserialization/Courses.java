@@ -10,16 +10,18 @@ public class Courses {
 	private  List<api> api;
 	private List<mobile> mobile;
 	
-//	 { "instructor": "RahulShetty", "url": "rahulshettycademy.com", "services": "projectSupport", "expertise": "Automation",
-//	"courses": { "webAutomation": [ { "courseTitle": "Selenium Webdriver Java", "price": "50" }, { "courseTitle": "Cypress",
-//		"price": "40"
-//		},
-//		{
-//		"courseTitle": "Protractor",
-//		"price": "40"
-//		}
-//		],                         list of api's
-//		"api": [
+//	 { 
+//	"instructor": "RahulShetty", 
+//	"url": "rahulshettycademy.com", 
+//	"services": "projectSupport",
+//	"expertise": "Automation",
+//	"courses": { "webAutomation": [ { "courseTitle": "Selenium Webdriver Java", "price": "50" }, { "courseTitle": "Cypress", "price": "40"
+//		},{	"courseTitle": "Protractor","price": "40"} ],
+	 
+	
+	  //list of api's
+//		
+	 // "api": [
 //		{
 //		"courseTitle": "Rest Assured Automation using Java",
 //		"price": "50"
