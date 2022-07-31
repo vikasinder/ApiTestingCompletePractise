@@ -20,6 +20,18 @@ public class EcommerceApiTest {
 		// TODO Auto-generated method stub
 		
 		
+		
+		
+//		\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+		
+	//	\\\\\\\\\\\\\\\\\\RELAXEDHTTPSVALIDATIONS METHOD \\\\\\\\\\\\\\\\
+		
+		////////////////IT IS USED TO BYPASS ALL HTTPS CERTIFICATIONS REQUIREMENTS        ///////////////////
+		
+		
+	/////////*******************************************************////////////////
+		
+		
 	//	RestAssured.baseURI="https://rahulshettyacademy.com";
 
 		//  	OR YOU CAN USE THIS IN SPECBUILDER CLASS AS WELL AS THIS IS COMMON URL FOR ALL THE REQUESTS    //
@@ -38,7 +50,7 @@ public class EcommerceApiTest {
 				login.setUserEmail("vikasinder72@gmail.com");
 				login.setUserPassword("Inder@1057");
 				
-				RequestSpecification recievedReq=given().log().all().spec(intialRequest)
+				RequestSpecification recievedReq=given().relaxedHTTPSValidation().log().all().spec(intialRequest)
 				.body(login); // object is passed here // seriallization takes place here
 			
 						
