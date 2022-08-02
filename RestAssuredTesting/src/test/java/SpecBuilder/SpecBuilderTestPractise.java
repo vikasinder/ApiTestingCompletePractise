@@ -31,13 +31,13 @@ public class SpecBuilderTestPractise {
 	public static void main(String[] args) {
 		
 		// OBJECT OF REQUESTSPECIFICATION CLASS IS MADE
-		
+		// USED WHEN SENDING JSON
 		RequestSpecification req= new RequestSpecBuilder().setBaseUri("https://rahulshettyacademy.com")
 		.addQueryParam("Key", "qaclick123")
 		.setContentType(ContentType.JSON)
 		.build(); // This is there for both RequestSpecBuilder & ResponseSpecBilder
 		
-//		
+//		// USED WHEN RECIEVING JSON
 		ResponseSpecification responseBuild= new ResponseSpecBuilder().expectStatusCode(200)
 				.expectContentType(ContentType.JSON)
 				.build(); // This is there for both RequestSpecBuilder & ResponseSpecBilder
